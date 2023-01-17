@@ -1,0 +1,24 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+
+pairs = [
+    [
+        r"mein Name ist (.*)",
+        ["Hallo %1, wie kann ich Ihnen helfen?"]
+    ],
+    [
+        r"was kannst du (.*)",
+        ["Ich kann Ihnen mit vielen Dingen helfen. Was benötigen Sie genau?"]
+    ],
+    [
+        r"entschuldigung (.*)",
+        ["Kein Problem", "Keine Sorge, ich bin hier um zu helfen"]
+    ],
+    [
+        r"bye",
+        ["Auf Wiedersehen", "Bis zum nächsten mal"]
+    ]
+]
+
+chatbot = Chat(pairs, reflections)
+chatbot.converse()
